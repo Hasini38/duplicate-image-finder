@@ -32,11 +32,24 @@ const upload = multer({ storage });
 
 app.use("/uploads", express.static(uploadFolder));
 
-// API Route
+/* ---------- Serve Frontend ---------- */
+
+const clientPath = path.join(__dirname, "../client");
+
+app.use(express.static(clientPath));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(clientPath, "index.html"));
+});
+
+/* ---------- API ---------- */
+
 app.use("/compare", upload.array("images", 20), compareRoute);
 
-const PORT = 5000;
+/* ---------- Start Server ---------- */
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
 });
