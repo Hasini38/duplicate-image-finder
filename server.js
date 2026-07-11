@@ -34,7 +34,7 @@ app.use("/uploads", express.static(uploadFolder));
 
 /* ---------- Serve Frontend ---------- */
 
-const clientPath = path.join(__dirname, "../client");
+const clientPath = path.join(__dirname, "public");
 
 app.use(express.static(clientPath));
 
