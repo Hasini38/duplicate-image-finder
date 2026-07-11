@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Image Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="bubble bubble1"></div>
+<div class="bubble bubble2"></div>
+<div class="bubble bubble3"></div>
+<div class="bubble bubble4"></div>
+<div class="bubble bubble5"></div>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>🖼 Duplicate Image Finder</h1>
+
+        <p>
+            Upload multiple images and instantly detect duplicate or visually similar images using perceptual image hashing.
+        </p>
+
+    </div>
+
+    <div class="upload-card">
+
+        <div id="drop-area">
+
+            <div class="upload-icon">
+                📂
+            </div>
+
+            <h2>Drag & Drop Images</h2>
+
+            <p>or click below</p>
+
+            <input
+                type="file"
+                id="images"
+                multiple
+                accept="image/*"
+            >
+
+        </div>
+
+        <button id="compareBtn">
+
+            Compare Images
+
+        </button>
+
+    </div>
+
+    <div id="previewContainer">
+
+    </div>
+
+    <div id="loader">
+
+        <div class="spinner"></div>
+
+        <p>Analyzing Images...</p>
+
+    </div>
+
+    <div id="results">
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
